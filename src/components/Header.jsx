@@ -3,6 +3,7 @@ import MenuItem from './MenuItem'
 import {AiFillHome} from 'react-icons/ai'
 import {BsCircleFill} from 'react-icons/bs'
 import Link from 'next/link'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export default function Header() {
   return (
@@ -11,10 +12,13 @@ export default function Header() {
             <MenuItem title="Home" address="/" Icon={AiFillHome}/>
             <MenuItem title="About" address="/about" Icon={BsCircleFill}/>
         </div>
-        <Link href={'/'} className='flex gap-1 items-center'>
+        <div className='flex gap-3 items-center'>
+        <ThemeSwitcher />
+        <Link href={'/'} className='flex gap-3 items-center'>
           <div className='text-2xl font-bold bg-amber-500 py-1 px-2 rounded-xl'>imDB</div>
           <div className='text-xl hidden sm:inline'>clone</div>
         </Link>
+        </div>
     </div>
   )
 }
